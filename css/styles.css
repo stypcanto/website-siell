@@ -275,7 +275,7 @@ input:checked+label:after {
 
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(http://i.imgur.com/tBxsfVQ.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/1.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -301,7 +301,7 @@ input:checked+label:after {
 }
 
 .content p {
-  margin: 20px auto;
+  margin: 10px auto;
   font-weight: 300;
   line-height: 1.6;
   max-width: 600px;
@@ -348,6 +348,28 @@ button:hover {
   transform: scale(1.15);
 }
 
+
+.h1_magic {
+ display: none;
+ 
+}
+.magic1 {
+  
+  font-size: 1.7rem;
+
+  /* Centra el contenido horizontalmente */
+}
+.magic2{
+  display: none;
+}
+ .magic3 {
+ 
+  font-size: 1.3rem;
+  margin-bottom: 40px !important;
+  /* Centra el contenido horizontalmente */
+}
+
+
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
@@ -372,7 +394,9 @@ button:hover {
     margin: 11px 29px;
    
   }
-  .magic1 {
+
+  .h1_magic {
+    display: block !important;
     color: rgb(29, 194, 172);
     font-size: 2.8rem;
     font-weight: bold; /* Aplica negrita al texto */
@@ -380,14 +404,16 @@ button:hover {
     text-align: center;
     /* Centra el contenido horizontalmente */
     font-family: 'Roboto', sans-serif; /* Cambia a la fuente que desees */
+    margin: 0 8px 0 8px;
+   }
+  .magic1 {
+   display: none;
    
   }
-  .magic2 {
-    color: var(--white);
-    font-size: 1.8rem;
-    text-align: center;
-    /* Centra el contenido horizontalmente */
-  }
+ 
+
+
+
 }
 
 @media (max-width: 991px) {
