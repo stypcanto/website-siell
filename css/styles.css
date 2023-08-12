@@ -61,7 +61,7 @@ nav {
   justify-content: space-between;
   text-decoration: none;
   padding: 0 24px;
-  z-index: 2;
+
 
 }
 
@@ -105,7 +105,7 @@ nav {
 }
 
 
-/* Efecto botones  */
+/* Efecto botones */
 .navbar-left ul li a::before,
 .navbar-right ul li a::before {
   content: '';
@@ -114,9 +114,8 @@ nav {
   bottom: 0;
   height: 2px;
   width: 0;
-  background-color: var(--celeste);
+  background-color: var(--blanco);
   transition: .5s ease;
-
 }
 
 .navbar-left ul li a:hover,
@@ -135,21 +134,25 @@ nav {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
-  height: 0;
-  width: 100%;
-  background-color: var(--celeste);
+  top: 0; /* Cambiamos la posición bottom a top */
+  height: 2px; /* Cambiamos la altura para que coincida con el efecto de línea */
+  width: 0;
+  background-color: var(--verde-darker);
   transition: .4s ease;
-  z-index: -1;
-
+  transform: scaleX(0); /* Cambiamos scaleY por scaleX */
+  transform-origin: left top; /* Cambiamos el punto de origen */
 }
 
 .navbar-left ul li a:hover::after,
 .navbar-right ul li a:hover::after {
-  height: 100%;
+  width: 100%; /* Cambiamos la propiedad a 100% */
+  transform: scaleX(1); /* Hacemos crecer la barra hacia la derecha */
   transition-delay: 0.4s;
-  color: aliceblue;
+  background-color: var(--blanco); /* Ajustamos el color de fondo */
+  color: var(--azul); /* Ajustamos el color del texto */
 }
+
+
 
 .logo {
   height: 80px;
@@ -170,7 +173,7 @@ nav {
 
 .mobile-menu {
 
-  z-index: 10;
+
   position: absolute;
   top: 80px;
   left: 0px;
@@ -221,7 +224,7 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   color: #333;
-  z-index: 1;
+
 }
 
 #switch {
@@ -233,7 +236,7 @@ label {
   text-indent: -2000px;
   width: 40px;
   height: 20px;
-  background: var(--celeste);
+  background: var(--verdedegradado);
   border-radius: 200px;
   position: relative;
   display: inline-block;
@@ -280,18 +283,32 @@ input:checked+label:after {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  z-index: 1;
-  transition: background-color 0.4s, color 0.4s;
+
+
 }
 
+@keyframes aparecer {
+  0% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
 
 .content {
   width: 100%;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(20%);
   text-align: center;
   color: var(--blanco);
+  opacity: 1;
+  animation: aparecer 2s forwards;
+  /* Cambia infinite a forwards */
 }
 
 .content h1 {
@@ -335,7 +352,7 @@ button span {
   position: absolute;
   left: 0;
   bottom: 0;
-  z-index: -1;
+
   transition: 0.5s;
 }
 
@@ -350,20 +367,23 @@ button:hover {
 
 
 .h1_magic {
- display: none;
- 
+  display: none;
+
 }
+
 .magic1 {
-  
+
   font-size: 1.7rem;
 
   /* Centra el contenido horizontalmente */
 }
-.magic2{
+
+.magic2 {
   display: none;
 }
- .magic3 {
- 
+
+.magic3 {
+
   font-size: 1.3rem;
   margin-bottom: 40px !important;
   /* Centra el contenido horizontalmente */
@@ -376,9 +396,10 @@ button:hover {
 
 
 @media (max-width: 321px) {}
+
 .magic2 {
   font-size: 1.3rem;
- 
+
 }
 
 @media (max-width: 390px) {
@@ -386,31 +407,35 @@ button:hover {
   .content {
     padding: 10px;
   }
+
   .content h1 {
     display: none;
   }
 
   .content p {
     margin: 11px 29px;
-   
+
   }
 
   .h1_magic {
     display: block !important;
     color: rgb(29, 194, 172);
     font-size: 2.8rem;
-    font-weight: bold; /* Aplica negrita al texto */
+    font-weight: bold;
+    /* Aplica negrita al texto */
     /* Cambia el tamaño de la fuente según tus preferencias */
     text-align: center;
     /* Centra el contenido horizontalmente */
-    font-family: 'Roboto', sans-serif; /* Cambia a la fuente que desees */
+    font-family: 'Roboto', sans-serif;
+    /* Cambia a la fuente que desees */
     margin: 0 8px 0 8px;
-   }
-  .magic1 {
-   display: none;
-   
   }
- 
+
+  .magic1 {
+    display: none;
+
+  }
+
 
 
 
@@ -438,12 +463,24 @@ button:hover {
     border: 0;
     background: transparent;
     gap: .67rem;
-    z-index: 2;
+
   }
 
 
 
   .hamburger-menu>div {
+    /* La selección .hamburger-menu>div en CSS se refiere a los elementos <div> que son hijos directos del elemento con 
+    la clase .hamburger-menu. 
+    
+    En otras palabras, está seleccionando los elementos <div> que están dentro del contenedor con la clase .hamburger-menu.
+
+    Aquí tienes la explicación en español:
+
+         .hamburger-menu: Selecciona un elemento con la clase "hamburger-menu".
+        >: Indica que estamos seleccionando un elemento hijo directo del elemento anterior.
+        div: Selecciona los elementos <div> que son hijos directos del elemento con la clase .hamburger-menu. 
+        
+    */
     background-color: var(--blanco);
     height: 2px;
     width: 100%;
