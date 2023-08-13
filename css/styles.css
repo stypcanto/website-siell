@@ -271,16 +271,7 @@ nav {
 
 
 
-.dark-mode {
 
-  /* Estilos para el modo oscuro */
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(https://imgur.com/tBxsfVQ);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #333;
-
-}
 
 #switch {
   display: none;
@@ -311,7 +302,7 @@ label:after {
 }
 
 input:checked+label {
-  background: var(--amarillo);
+  background: gray;
 
 }
 
@@ -350,6 +341,10 @@ input:checked+label:after {
   color: #fff;
  
 
+}
+
+.dark-mode .banner {
+  background-image: linear-gradient(rgba(12, 11, 11, 0.6), rgba(2, 2, 2, 0.6)), url(../img/2.webp);
 }
 
 @keyframes aparecer {
@@ -510,17 +505,32 @@ button:hover {
 \*-----------------------------------*/
 
 
-@media (max-width: 321px) {}
+@media (max-width: 321px) {
 
 .magic2 {
   font-size: 1.3rem;
 
 }
 
+
+
+}
+
+
 @media (max-width: 390px) {
+
+  label {
+    display: inline !important;
+    cursor: pointer;
+    text-indent: -2000px;
+    margin-top: 50px;
+    z-index: 5;
+    /* Agregamos esta línea para que ocupe el espacio adecuado */
+  }
 
   .content {
     padding: 10px;
+    margin-top: 80%;
   }
 
   .content h1 {
