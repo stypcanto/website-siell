@@ -17,6 +17,52 @@
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
+   /**
+   * typography
+   */
+
+   --ff-open-sans: 'Open Sans', sans-serif;
+   --ff-barlow: 'Barlow', sans-serif;
+   --ff-poppins: 'Poppins', sans-serif;
+ 
+   --fs-1: 3.5rem;
+   --fs-2: 3rem;
+   --fs-3: 2.4rem;
+   --fs-4: 2rem;
+   --fs-5: 1.8rem;
+   --fs-6: 1.3rem;
+ 
+   --fw-600: 600;
+   --fw-700: 700;
+ 
+   /**
+    * border radius
+    */
+ 
+   --radius-5: 5px;
+   --radius-10: 10px;
+   --radius-15: 15px;
+   --radius-20: 20px;
+ 
+   /**
+    * spacing
+    */
+ 
+   --section-padding: 60px;
+ 
+   /**
+    * shadow
+    */
+ 
+   --shadow: 0 -5px 10px var(--manatee);
+ 
+   /**
+    * transition
+    */
+ 
+   --transition-1: 0.05s ease;
+   --transition-2: 0.25s ease;
+   --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02);
 }
 
 /* GENERAL */
@@ -48,15 +94,23 @@ body {
   position: relative;
 }
 
-
+.section {
+  padding-block: var(--section-padding);
+}
 
 .inactive {
   display: none;
 }
 
+
+
+.container {
+  max-width: 1077px;
+  margin-inline: auto;
+}
 /* BARRA DE NAVGACION PRINCIPAL  */
 nav {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   text-decoration: none;
@@ -102,6 +156,7 @@ nav {
 
   position: relative;
   transition: .5s ease;
+  z-index: 1;
 }
 
 
@@ -116,6 +171,7 @@ nav {
   width: 0;
   background-color: var(--blanco);
   transition: .5s ease;
+  z-index: -1;
 }
 
 .navbar-left ul li a:hover,
@@ -132,24 +188,23 @@ nav {
 .navbar-left ul li a::after,
 .navbar-right ul li a::after {
   content: '';
-  position: absolute;
-  left: 0;
-  top: 0; /* Cambiamos la posición bottom a top */
-  height: 2px; /* Cambiamos la altura para que coincida con el efecto de línea */
-  width: 0;
-  background-color: var(--verde-darker);
-  transition: .4s ease;
-  transform: scaleX(0); /* Cambiamos scaleY por scaleX */
-  transform-origin: left top; /* Cambiamos el punto de origen */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: var(--verde-darker);
+    transition: .4s ease;
+    z-index: -1;
+
 }
 
 .navbar-left ul li a:hover::after,
 .navbar-right ul li a:hover::after {
-  width: 100%; /* Cambiamos la propiedad a 100% */
-  transform: scaleX(1); /* Hacemos crecer la barra hacia la derecha */
+  height: 100%;
   transition-delay: 0.4s;
-  background-color: var(--blanco); /* Ajustamos el color de fondo */
-  color: var(--azul); /* Ajustamos el color del texto */
+  color: aliceblue;
+
 }
 
 
@@ -173,7 +228,7 @@ nav {
 
 .mobile-menu {
 
-
+  z-index: 10;
   position: absolute;
   top: 80px;
   left: 0px;
@@ -269,9 +324,19 @@ input:checked+label:after {
 
 
 
+
+
 /*-----------------------------------*\
-  #CONTENT
+  #HOME
 \*-----------------------------------*/
+
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
 .banner {
   height: 100vh;
@@ -283,7 +348,7 @@ input:checked+label:after {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-
+ 
 
 }
 
@@ -300,9 +365,9 @@ input:checked+label:after {
 }
 
 .content {
-  width: 100%;
-  position: absolute;
-  top: 50%;
+ 
+ margin-top: 20%;
+ 
   transform: translateY(20%);
   text-align: center;
   color: var(--blanco);
@@ -310,6 +375,12 @@ input:checked+label:after {
   animation: aparecer 2s forwards;
   /* Cambia infinite a forwards */
 }
+
+
+ 
+ 
+
+
 
 .content h1 {
   margin-top: 40px;
@@ -390,6 +461,50 @@ button:hover {
 }
 
 
+
+
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--celeste);
+  
+
+}
+
+.about .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+/*-----------------------------------*\
+  #PRODUCTS
+\*-----------------------------------*/
+
+
+.products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--verdeclaro);
+
+ 
+}
+
+.about .products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
@@ -463,7 +578,6 @@ button:hover {
     border: 0;
     background: transparent;
     gap: .67rem;
-
   }
 
 
@@ -501,12 +615,11 @@ button:hover {
     transform: rotate(-45deg);
   }
 
-  .navbar-center .logo {
-    display: flex;
-    justify-content: center;
-    /* Centrar horizontalmente */
-    align-items: center;
-    /* Centrar verticalmente */
+  /* Centra solo la imagen */
+  .navbar-left .logo {
+    display: block;
+    margin: 0 auto !important; /* Margen automático horizontal para centrar */
+
 
   }
 
