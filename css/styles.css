@@ -121,6 +121,7 @@ nav {
   justify-content: space-between;
   text-decoration: none;
   padding: 0 24px;
+  
 
 }
 
@@ -234,18 +235,17 @@ nav {
 }
 
 .mobile-menu {
-
-  z-index: 10;
   position: absolute;
-  top: 80px;
+  top: 100px;
   left: 0px;
-  width: 35%;
+  width: 100%;
   padding: 24px;
-  border-radius: 0 8px 8px 0;
+ 
   /* Radio de esquina derecho e inferior derecho */
   background-color: var(--white);
   box-shadow: 5px 5px 25px -10px var(--black);
-  background-color: rgb(8, 115, 177);
+  background-color: var(--azul);
+
 }
 
 .mobile-menu.active {
@@ -256,7 +256,10 @@ nav {
   text-decoration: none;
   color: var(--black);
   font-weight: bold;
-  /* margin-bottom: 24px; */
+  font-size: 2rem; /* Cambia el tamaño de fuente según tus preferencias */
+  text-align: center; /* Centrar el texto horizontalmente */
+  display: block; /* Para que los enlaces ocupen todo el ancho disponible */
+ 
 }
 
 .mobile-menu ul {
@@ -401,7 +404,7 @@ input:checked+label:after {
   max-width: 600px;
 }
 
-button {
+.boton-general {
   width: 200px;
   padding: 15px 0;
   text-align: center;
@@ -417,11 +420,11 @@ button {
   transition: background-color 0.3s, transform 0.3s;
 }
 
-button i {
+.boton-general i {
   margin-right: 8px;
 }
 
-button span {
+.boton-general span {
   background: transparent;
   height: 100%;
   width: 0;
@@ -433,11 +436,11 @@ button span {
   transition: 0.5s;
 }
 
-button:hover span {
+.boton-general:hover span {
   width: 100%;
 }
 
-button:hover {
+.boton-general:hover {
   background-color: var(--verdecolorido);
   transform: scale(1.15);
 }
@@ -520,6 +523,9 @@ button:hover {
 
 @media (max-width: 321px) {
 
+  .content{
+    margin-top: 455px !important;
+  }
   .magic2 {
     font-size: 1.3rem;
 
@@ -581,6 +587,22 @@ button:hover {
 
 @media (max-width: 991px) {
 
+  nav{
+    background: var(--verdecolorido);
+   
+  }
+
+  nav::after {
+    content: ''; /* Agrega un contenido vacío para el pseudo-elemento */
+    position: absolute; /* Colocamos el pseudo-elemento de manera absoluta */
+    left: 0; /* Lo posicionamos al inicio del nav */
+    bottom: -1px; /* Mueve el pseudo-elemento hacia abajo (la altura de la línea + la sombra) */
+    width: 100%; /* Ancho igual al del nav */
+    height: 1px; /* Altura de la línea */
+    background-color: var(--blanco); /* Color de la línea blanca */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra debajo de la línea */
+  }
+
   .navbar-center {
     /* Establecemos un contenedor flexible */
     display: flex !important;
@@ -620,14 +642,18 @@ button:hover {
   .hamburger-menu {
     display: flex;
     flex-direction: column;
-    margin-top: 29px;
     width: 2.5rem;
-    height: 2.5rem;
+    height: 3rem;
+    border: 0;
+    background: transparent;
     cursor: pointer;
+    margin-top: 39px;
+    gap: 0.65rem; /* separacion de las lineas */
+    
     /* Agregamos un cursor para indicar que es interactivo */
   }
 
-  .hamburger-menu>div {
+  .hamburger-menu > div {
     /* La selección .hamburger-menu>div en CSS se refiere a los elementos <div> que son hijos directos del elemento con 
     la clase .hamburger-menu. 
     
@@ -644,25 +670,22 @@ button:hover {
     height: 2px;
     width: 100%;
     border-radius: 5px;
-    transition: transform 0.5s, opacity 0.5s;
+    transition: all 0.5s;
     /* Combinamos las transiciones en una sola línea */
     transform-origin: left;
   }
 
-  .hamburger-menu:hover div:first-child {
+ .hamburger-menu:hover div:first-child {
     transform: rotate(45deg);
   }
 
   .hamburger-menu:hover div:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* desaparece */
   }
 
-  .hamburger-menu:hover div:last-child {
+ .hamburger-menu:hover div:last-child {
     transform: rotate(-45deg);
   }
-
-
-
 
 
 
