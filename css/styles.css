@@ -17,52 +17,52 @@
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
-   /**
+  /**
    * typography
    */
 
-   --ff-open-sans: 'Open Sans', sans-serif;
-   --ff-barlow: 'Barlow', sans-serif;
-   --ff-poppins: 'Poppins', sans-serif;
- 
-   --fs-1: 3.5rem;
-   --fs-2: 3rem;
-   --fs-3: 2.4rem;
-   --fs-4: 2rem;
-   --fs-5: 1.8rem;
-   --fs-6: 1.3rem;
- 
-   --fw-600: 600;
-   --fw-700: 700;
- 
-   /**
+  --ff-open-sans: 'Open Sans', sans-serif;
+  --ff-barlow: 'Barlow', sans-serif;
+  --ff-poppins: 'Poppins', sans-serif;
+
+  --fs-1: 3.5rem;
+  --fs-2: 3rem;
+  --fs-3: 2.4rem;
+  --fs-4: 2rem;
+  --fs-5: 1.8rem;
+  --fs-6: 1.3rem;
+
+  --fw-600: 600;
+  --fw-700: 700;
+
+  /**
     * border radius
     */
- 
-   --radius-5: 5px;
-   --radius-10: 10px;
-   --radius-15: 15px;
-   --radius-20: 20px;
- 
-   /**
+
+  --radius-5: 5px;
+  --radius-10: 10px;
+  --radius-15: 15px;
+  --radius-20: 20px;
+
+  /**
     * spacing
     */
- 
-   --section-padding: 60px;
- 
-   /**
+
+  --section-padding: 60px;
+
+  /**
     * shadow
     */
- 
-   --shadow: 0 -5px 10px var(--manatee);
- 
-   /**
+
+  --shadow: 0 -5px 10px var(--manatee);
+
+  /**
     * transition
     */
- 
-   --transition-1: 0.05s ease;
-   --transition-2: 0.25s ease;
-   --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02);
+
+  --transition-1: 0.05s ease;
+  --transition-2: 0.25s ease;
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02);
 }
 
 /* GENERAL */
@@ -108,14 +108,19 @@ body {
   max-width: 1077px;
   margin-inline: auto;
 }
+
 /* BARRA DE NAVGACION PRINCIPAL  */
 nav {
   position: fixed;
   display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  /* Puedes ajustar la altura según tu diseño */
   justify-content: space-between;
   text-decoration: none;
   padding: 0 24px;
-
 
 }
 
@@ -139,6 +144,8 @@ nav {
 .navbar-left {
   display: flex;
 }
+
+
 
 .navbar-left ul {
   margin-left: 12px;
@@ -188,14 +195,14 @@ nav {
 .navbar-left ul li a::after,
 .navbar-right ul li a::after {
   content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 0;
-    width: 100%;
-    background-color: var(--verde-darker);
-    transition: .4s ease;
-    z-index: -1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: var(--verde-darker);
+  transition: .4s ease;
+  z-index: -1;
 
 }
 
@@ -239,6 +246,10 @@ nav {
   background-color: var(--white);
   box-shadow: 5px 5px 25px -10px var(--black);
   background-color: rgb(8, 115, 177);
+}
+
+.mobile-menu.active {
+  display: block;
 }
 
 .mobile-menu a {
@@ -326,7 +337,7 @@ input:checked+label:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 .banner {
@@ -339,7 +350,7 @@ input:checked+label:after {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
- 
+
 
 }
 
@@ -360,9 +371,9 @@ input:checked+label:after {
 }
 
 .content {
- 
- margin-top: 20%;
- 
+
+  margin-top: 20%;
+
   transform: translateY(20%);
   text-align: center;
   color: var(--blanco);
@@ -372,8 +383,8 @@ input:checked+label:after {
 }
 
 
- 
- 
+
+
 
 
 
@@ -469,7 +480,7 @@ button:hover {
   justify-content: center;
   height: 100vh;
   background-color: var(--celeste);
-  
+
 
 }
 
@@ -479,6 +490,7 @@ button:hover {
   align-items: center;
   gap: 80px;
 }
+
 /*-----------------------------------*\
   #PRODUCTS
 \*-----------------------------------*/
@@ -491,7 +503,7 @@ button:hover {
   height: 100vh;
   background-color: var(--verdeclaro);
 
- 
+
 }
 
 .about .products {
@@ -500,6 +512,7 @@ button:hover {
   align-items: center;
   gap: 80px;
 }
+
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
@@ -507,10 +520,10 @@ button:hover {
 
 @media (max-width: 321px) {
 
-.magic2 {
-  font-size: 1.3rem;
+  .magic2 {
+    font-size: 1.3rem;
 
-}
+  }
 
 
 
@@ -523,7 +536,7 @@ button:hover {
     display: inline !important;
     cursor: pointer;
     text-indent: -2000px;
-    margin-top: 50px;
+    margin-top: 10px;
     z-index: 5;
     /* Agregamos esta línea para que ocupe el espacio adecuado */
   }
@@ -567,6 +580,29 @@ button:hover {
 }
 
 @media (max-width: 991px) {
+
+  .navbar-center {
+    /* Establecemos un contenedor flexible */
+    display: flex !important;
+
+    /* Centramos el contenido horizontalmente */
+    justify-content: center;
+
+    /* Centramos el contenido verticalmente */
+    align-items: center;
+
+    /* Establecemos la posición absoluta en la parte superior izquierda de la ventana */
+    top: 0;
+    left: 0;
+
+    /* Hacemos que el contenedor ocupe todo el ancho de la ventana */
+    width: 100%;
+
+    /* Asignamos una altura fija al contenedor */
+    height: 100px;
+    /* Puedes ajustar la altura según tu diseño */
+  }
+
   .navbar-right {
     display: none;
   }
@@ -578,19 +614,18 @@ button:hover {
     /* No necesitas esto aquí */
   }
 
-  /* Agrega el botón hamburguesa */
+
+
+  /* Menú hamburguesa */
   .hamburger-menu {
     display: flex;
     flex-direction: column;
     margin-top: 29px;
     width: 2.5rem;
     height: 2.5rem;
-    border: 0;
-    background: transparent;
-    gap: .67rem;
+    cursor: pointer;
+    /* Agregamos un cursor para indicar que es interactivo */
   }
-
-
 
   .hamburger-menu>div {
     /* La selección .hamburger-menu>div en CSS se refiere a los elementos <div> que son hijos directos del elemento con 
@@ -609,7 +644,8 @@ button:hover {
     height: 2px;
     width: 100%;
     border-radius: 5px;
-    transition: all .5s;
+    transition: transform 0.5s, opacity 0.5s;
+    /* Combinamos las transiciones en una sola línea */
     transform-origin: left;
   }
 
@@ -625,13 +661,9 @@ button:hover {
     transform: rotate(-45deg);
   }
 
-  /* Centra solo la imagen */
-  .navbar-left .logo {
-    display: block;
-    margin: 0 auto !important; /* Margen automático horizontal para centrar */
 
 
-  }
+
 
 
 

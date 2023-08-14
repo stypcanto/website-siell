@@ -21,7 +21,7 @@ switchInput.addEventListener('change', function () {
 
 
 function toggleMenu() { // Cambio de nombre de función para ser coherente
-    mobileMenu.classList.toggle('inactive'); // Cambia la clase para mostrar u ocultar el menú
+    mobileMenu.classList.toggle('active'); // Cambia la clase para mostrar u ocultar el menú
 }
 
 
