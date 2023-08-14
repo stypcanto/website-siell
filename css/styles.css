@@ -2,6 +2,7 @@
 
   --fuentePrincipal: 'Staatliches', cursive;
   --azul: rgb(10, 33, 51);
+  --azulclaro: rgb(18, 60, 91);
   --blanco: white;
   --negro: black;
   --celeste: rgb(71, 176, 217);
@@ -244,7 +245,7 @@ nav {
   /* Radio de esquina derecho e inferior derecho */
   background-color: var(--white);
   box-shadow: 5px 5px 25px -10px var(--black);
-  background-color: var(--azul);
+  background-color: var(--azulclaro);
 
 }
 
@@ -336,28 +337,22 @@ input:checked+label:after {
 \*-----------------------------------*/
 
 
-.home {
+
+
+/* Estilos para la sección .home.banner */
+.home.banner {
   display: flex;
   align-items: center;
   justify-content: center;
-
-}
-
-.banner {
   height: 100vh;
-
-  align-items: center;
-  justify-content: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(../img/1.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-
-
 }
 
-.dark-mode .banner {
+.dark-mode .home.banner {
   background-image: linear-gradient(rgba(12, 11, 11, 0.6), rgba(2, 2, 2, 0.6)), url(../img/2.webp);
 }
 
@@ -368,22 +363,113 @@ input:checked+label:after {
   }
 
   100% {
-    transform: translateY(-50%);
+    transform: translateY(5%);
     opacity: 1;
   }
 }
 
-.content {
-
-  margin-top: 20%;
-
+/* Estilos para el contenido */
+.home.banner .content {
   transform: translateY(20%);
   text-align: center;
   color: var(--blanco);
   opacity: 1;
   animation: aparecer 2s forwards;
-  /* Cambia infinite a forwards */
 }
+
+/* Estilos para el título */
+.home.banner .content h1 {
+  margin-top: -43px;
+  font-size: 2.5rem;
+  color: var(--verdeclaro);
+}
+
+/* Estilos para el párrafo */
+.home.banner .content p {
+  margin: 10px auto;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Estilos para el botón general */
+.home.banner .boton-general {
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  background: var(--verdedegradado);
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.home.banner .boton-general i {
+  margin-right: 8px;
+}
+
+.home.banner .boton-general span {
+  background: transparent;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s;
+}
+
+.home.banner .boton-general:hover span {
+  width: 100%;
+}
+
+.home.banner .boton-general:hover {
+  background-color: var(--verdecolorido);
+  transform: scale(1.15);
+}
+
+/* Estilos para las redes sociales */
+.home.banner .redes-sociales {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px; /* Espaciado entre el botón y las redes sociales */
+}
+
+.home.banner .redes-sociales a {
+  display: inline-block;
+  margin: 0 4px; /* Espaciado entre las redes sociales */
+  font-size: 24px; /* Tamaño de la fuente de las redes sociales */
+  color: var(--suaveplomo); /* Cambia al color deseado */
+}
+
+.home.banner .redes-sociales a:hover {
+  color: var(--suaveplomo);
+  transform: translateY(-3px);
+}
+
+.home.banner .redes-sociales a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--suaveplomo);
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.home.banner .redes-sociales a:hover::before {
+  transform: scaleX(1);
+}
+
 
 
 
@@ -531,6 +617,11 @@ input:checked+label:after {
 
   }
 
+  .logo{
+    height: 80px;
+    width: 180px;
+    margin-left: 18px;
+  }
 
 
 }
@@ -538,14 +629,7 @@ input:checked+label:after {
 
 @media (max-width: 390px) {
 
-  label {
-    display: inline !important;
-    cursor: pointer;
-    text-indent: -2000px;
-    margin-top: 10px;
-    z-index: 5;
-    /* Agregamos esta línea para que ocupe el espacio adecuado */
-  }
+  
 
   .content {
     padding: 10px;
@@ -559,6 +643,10 @@ input:checked+label:after {
   .content p {
     margin: 11px 29px;
 
+  }
+
+  .home.banner .content h1 {
+    margin-top: -350px;
   }
 
   .h1_magic {
@@ -580,7 +668,10 @@ input:checked+label:after {
 
   }
 
-
+/* Mover el switch-container dentro de .navbar-left */
+.navbar-left #switch-container label {
+  text-indent: -2000px; /* Mueve el texto fuera del área visible */
+}
 
 
 }
@@ -588,7 +679,7 @@ input:checked+label:after {
 @media (max-width: 991px) {
 
   nav{
-    background: var(--verdecolorido);
+    background: var(--azul);
    
   }
 
@@ -599,7 +690,7 @@ input:checked+label:after {
     bottom: -1px; /* Mueve el pseudo-elemento hacia abajo (la altura de la línea + la sombra) */
     width: 100%; /* Ancho igual al del nav */
     height: 1px; /* Altura de la línea */
-    background-color: var(--blanco); /* Color de la línea blanca */
+    background-color: var(--suaveplomo); /* Color de la línea blanca */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra debajo de la línea */
   }
 
@@ -689,7 +780,13 @@ input:checked+label:after {
 
 
 
-
+/* Mover el switch-container dentro de .navbar-left */
+.navbar-left #switch-container {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 
 }
 
