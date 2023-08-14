@@ -18,6 +18,11 @@
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
+  --verdesurface: #0e5236;
+  --miFondoGradiente:  #8bcef0; /* fallback para navegadores antiguos */
+                      background: -webkit-linear-gradient(to right, #004e92, #000428); /* Chrome 10-25, Safari 5.1-6 */
+                      background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   /**
    * typography
    */
@@ -122,7 +127,7 @@ nav {
   justify-content: space-between;
   text-decoration: none;
   padding: 0 24px;
-  
+
 
 }
 
@@ -241,7 +246,7 @@ nav {
   left: 0px;
   width: 100%;
   padding: 24px;
- 
+
   /* Radio de esquina derecho e inferior derecho */
   background-color: var(--white);
   box-shadow: 5px 5px 25px -10px var(--black);
@@ -257,10 +262,13 @@ nav {
   text-decoration: none;
   color: var(--black);
   font-weight: bold;
-  font-size: 2rem; /* Cambia el tamaño de fuente según tus preferencias */
-  text-align: center; /* Centrar el texto horizontalmente */
-  display: block; /* Para que los enlaces ocupen todo el ancho disponible */
- 
+  font-size: 2rem;
+  /* Cambia el tamaño de fuente según tus preferencias */
+  text-align: center;
+  /* Centrar el texto horizontalmente */
+  display: block;
+  /* Para que los enlaces ocupen todo el ancho disponible */
+
 }
 
 .mobile-menu ul {
@@ -297,7 +305,7 @@ label {
   text-indent: -2000px;
   width: 40px;
   height: 20px;
-  background: var(--verdedegradado);
+  background: var(--miFondoGradiente);
   border-radius: 200px;
   position: relative;
   display: inline-block;
@@ -345,7 +353,7 @@ input:checked+label:after {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(../img/1.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(../img/3.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -381,7 +389,7 @@ input:checked+label:after {
 .home.banner .content h1 {
   margin-top: -43px;
   font-size: 2.5rem;
-  color: var(--verdeclaro);
+  color: var(--miFondoGradiente);
 }
 
 /* Estilos para el párrafo */
@@ -400,7 +408,13 @@ input:checked+label:after {
   margin: 20px 10px;
   border-radius: 25px;
   font-weight: bold;
-  background: var(--verdedegradado);
+  background: #000428;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #004e92, #000428);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: #fff;
   cursor: pointer;
   position: relative;
@@ -439,14 +453,18 @@ input:checked+label:after {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 20px; /* Espaciado entre el botón y las redes sociales */
+  margin-top: 20px;
+  /* Espaciado entre el botón y las redes sociales */
 }
 
 .home.banner .redes-sociales a {
   display: inline-block;
-  margin: 0 4px; /* Espaciado entre las redes sociales */
-  font-size: 24px; /* Tamaño de la fuente de las redes sociales */
-  color: var(--suaveplomo); /* Cambia al color deseado */
+  margin: 0 4px;
+  /* Espaciado entre las redes sociales */
+  font-size: 24px;
+  /* Tamaño de la fuente de las redes sociales */
+  color: var(--suaveplomo);
+  /* Cambia al color deseado */
 }
 
 .home.banner .redes-sociales a:hover {
@@ -609,15 +627,16 @@ input:checked+label:after {
 
 @media (max-width: 321px) {
 
-  .content{
+  .content {
     margin-top: 455px !important;
   }
+
   .magic2 {
     font-size: 1.3rem;
 
   }
 
-  .logo{
+  .logo {
     height: 80px;
     width: 180px;
     margin-left: 18px;
@@ -629,7 +648,7 @@ input:checked+label:after {
 
 @media (max-width: 390px) {
 
-  
+
 
   .content {
     padding: 10px;
@@ -668,30 +687,41 @@ input:checked+label:after {
 
   }
 
-/* Mover el switch-container dentro de .navbar-left */
-.navbar-left #switch-container label {
-  text-indent: -2000px; /* Mueve el texto fuera del área visible */
-}
+  /* Mover el switch-container dentro de .navbar-left */
+  .navbar-left #switch-container label {
+    text-indent: -2000px;
+    /* Mueve el texto fuera del área visible */
+  }
 
 
 }
 
 @media (max-width: 991px) {
 
-  nav{
-    background: var(--azul);
-   
+  nav {
+    background: #000428; /* fallback para navegadores antiguos */
+    background: -webkit-linear-gradient(to right, #004e92, #000428); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   }
 
   nav::after {
-    content: ''; /* Agrega un contenido vacío para el pseudo-elemento */
-    position: absolute; /* Colocamos el pseudo-elemento de manera absoluta */
-    left: 0; /* Lo posicionamos al inicio del nav */
-    bottom: -1px; /* Mueve el pseudo-elemento hacia abajo (la altura de la línea + la sombra) */
-    width: 100%; /* Ancho igual al del nav */
-    height: 1px; /* Altura de la línea */
-    background-color: var(--suaveplomo); /* Color de la línea blanca */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra debajo de la línea */
+    content: '';
+    /* Agrega un contenido vacío para el pseudo-elemento */
+    position: absolute;
+    /* Colocamos el pseudo-elemento de manera absoluta */
+    left: 0;
+    /* Lo posicionamos al inicio del nav */
+    bottom: -1px;
+    /* Mueve el pseudo-elemento hacia abajo (la altura de la línea + la sombra) */
+    width: 100%;
+    /* Ancho igual al del nav */
+    height: 1px;
+    /* Altura de la línea */
+    background-color: var(--suaveplomo);
+    /* Color de la línea blanca */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra debajo de la línea */
   }
 
   .navbar-center {
@@ -739,12 +769,13 @@ input:checked+label:after {
     background: transparent;
     cursor: pointer;
     margin-top: 39px;
-    gap: 0.65rem; /* separacion de las lineas */
-    
+    gap: 0.65rem;
+    /* separacion de las lineas */
+
     /* Agregamos un cursor para indicar que es interactivo */
   }
 
-  .hamburger-menu > div {
+  .hamburger-menu>div {
     /* La selección .hamburger-menu>div en CSS se refiere a los elementos <div> que son hijos directos del elemento con 
     la clase .hamburger-menu. 
     
@@ -766,27 +797,28 @@ input:checked+label:after {
     transform-origin: left;
   }
 
- .hamburger-menu:hover div:first-child {
+  .hamburger-menu:hover div:first-child {
     transform: rotate(45deg);
   }
 
   .hamburger-menu:hover div:nth-child(2) {
-    opacity: 0; /* desaparece */
+    opacity: 0;
+    /* desaparece */
   }
 
- .hamburger-menu:hover div:last-child {
+  .hamburger-menu:hover div:last-child {
     transform: rotate(-45deg);
   }
 
 
 
-/* Mover el switch-container dentro de .navbar-left */
-.navbar-left #switch-container {
-  display: flex;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
+  /* Mover el switch-container dentro de .navbar-left */
+  .navbar-left #switch-container {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
 
 }
 
