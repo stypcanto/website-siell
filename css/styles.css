@@ -316,7 +316,7 @@ nav {
   display: none;
 }
 
-label {
+#switch-container label {
   cursor: pointer;
   text-indent: -2000px;
   width: 40px;
@@ -328,7 +328,7 @@ label {
   /* Agregamos esta línea para que ocupe el espacio adecuado */
 }
 
-label:after {
+#switch-container label:after {
   content: '';
   position: absolute;
   top: 1px;
@@ -340,16 +340,15 @@ label:after {
   transition: 0.4s;
 }
 
-input:checked+label {
+/* Cambia los estilos de la etiqueta cuando el interruptor está activado (checked) */
+#switch:checked + label {
   background: gray;
-
 }
 
-input:checked+label:after {
+#switch:checked + label:after {
   left: calc(100% - 5px);
   transform: translateX(-80%);
   background: var(--blanco);
-  /* Corregimos esta línea */
 }
 
 
@@ -736,23 +735,65 @@ input:checked+label:after {
   #CONTACT
 \*-----------------------------------*/
 
+/* Estilos generales del formulario de contacto */
+.formulario-contacto {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-.contact {
+/* Estilos para los campos del formulario */
+.formulario-contacto .campo {
+  margin-bottom: 20px;
+}
+
+.formulario-contacto .campo label {
+  display: block;
+  font-weight: bold;
+}
+
+.formulario-contacto .campo input,
+.formulario-contacto .campo textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilos para el botón de enviar */
+.formulario-contacto .boton-enviar button {
+  background-color: #004e92;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.formulario-contacto .boton-enviar button:hover {
+  background-color: #003366;
+}
+
+/* Estilos adicionales para mejorar la apariencia del formulario de contacto */
+.container2 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   background-color: var(--azulclaro);
-
-
 }
 
-.contact .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 80px;
+.container2 h2 {
+  font-size: 24px;
+  text-align: center;
+  position: absolute;
+  color: var(--suaveplomo);
+  transform: translate(-50%, -780%);
 }
+
 
 /*-----------------------------------*\
   #MEDIA QUERIES
@@ -782,6 +823,14 @@ input:checked+label:after {
     width: 50px !important;
     height: 74px !important;
   
+  }
+
+  .formulario-contacto {
+    margin-top: 100px !important;
+  }
+
+  .container2 h2{
+    margin-top: 100px !important;
   }
 
 
@@ -843,6 +892,27 @@ input:checked+label:after {
     /* Mueve el texto fuera del área visible */
   }
 
+
+  .formulario-contacto {
+    width: 90%;
+    padding: 10px;
+  }
+  
+  .formulario-contacto .campo input,
+  .formulario-contacto .campo textarea {
+    padding: 6px;
+    font-size: 12px;
+  }
+  
+  .formulario-contacto .boton-enviar button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .container2 h2 {
+    font-size: 30px;
+    transform: translate(5%, -565%);
+  }
 
 }
 
