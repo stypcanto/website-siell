@@ -19,10 +19,25 @@
   --md: 16px;
   --lg: 18px;
   --verdesurface: #0e5236;
-  --miFondoGradiente:  #8bcef0; /* fallback para navegadores antiguos */
-                      background: -webkit-linear-gradient(to right, #004e92, #000428); /* Chrome 10-25, Safari 5.1-6 */
-                      background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  --miFondoGradiente: #8bcef0;
+  /* fallback para navegadores antiguos */
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #004e92, #000428);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+  /* Creando una variable para el color degradado azul */
+  --azul_nice: #000428;
+  /* fallback para navegadores antiguos */
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  /* Chrome 10-25, Safari 5.1-6 */
+  --azul_degradado: linear-gradient(to right, #004e92, #000428, var(--azul_nice));
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
   /**
    * typography
    */
@@ -207,9 +222,10 @@ nav {
   bottom: 0;
   height: 0;
   width: 100%;
-  background-color: var(--verde-darker);
+  background-color: var(--azul_nice);
   transition: .4s ease;
   z-index: -1;
+
 
 }
 
@@ -348,6 +364,41 @@ input:checked+label:after {
 
 
 /* Estilos para la sección .home.banner */
+
+.figurita-siell {
+  position: absolute;
+  /* Cambiado a absolute para centrar en la pantalla */
+  top: 143%;
+  /* Lleva el borde superior del elemento al 50% de la pantalla */
+  left: 50%;
+  /* Lleva el borde izquierdo del elemento al 50% de la pantalla */
+  transform: translate(-50%, -50%);
+  /* Centra el elemento en base a su centro */
+  width: 150px;
+  height: 174px;
+
+}
+
+.figurita-siell img {
+  width: 100%;
+  /* Para asegurarse de que la imagen ocupe todo el espacio disponible */
+  height: 100%;
+  /* Similarmente, la altura ocupará todo el espacio disponible */
+  object-fit: cover;
+  /* Escala la imagen para llenar completamente el espacio sin deformación */
+  border-radius: 5px;
+  /* Un borde redondeado para la imagen */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
+}
+
+
+.figurita-siell:hover {
+  transform: translate(-50%, -50%) scale(1.3);
+  /* Aumenta el tamaño en un 10% al hacer hover */
+}
+
+
 .home.banner {
   display: flex;
   align-items: center;
@@ -387,7 +438,7 @@ input:checked+label:after {
 
 /* Estilos para el título */
 .home.banner .content h1 {
-  margin-top: -43px;
+  margin-top: -107px;
   font-size: 2.5rem;
   color: var(--miFondoGradiente);
 }
@@ -408,12 +459,7 @@ input:checked+label:after {
   margin: 20px 10px;
   border-radius: 25px;
   font-weight: bold;
-  background: #000428;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #004e92, #000428);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #004e92, #000428);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: var(--azul_degradado);
 
   color: #fff;
   cursor: pointer;
@@ -642,6 +688,14 @@ input:checked+label:after {
     margin-left: 18px;
   }
 
+  .figurita-siell {
+    position: relative;
+    margin-top: 43px;
+    width: 50px !important;
+    height: 74px !important;
+  
+  }
+
 
 }
 
@@ -685,6 +739,14 @@ input:checked+label:after {
   .magic1 {
     display: none;
 
+
+  }
+
+  .figurita-siell {
+    top: 355%;
+    width: 120px;
+    height: 144px;
+
   }
 
   /* Mover el switch-container dentro de .navbar-left */
@@ -699,9 +761,12 @@ input:checked+label:after {
 @media (max-width: 991px) {
 
   nav {
-    background: #000428; /* fallback para navegadores antiguos */
-    background: -webkit-linear-gradient(to right, #004e92, #000428); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #000428;
+    /* fallback para navegadores antiguos */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   }
 
@@ -819,6 +884,8 @@ input:checked+label:after {
     top: 10px;
     left: 10px;
   }
+
+
 
 }
 
