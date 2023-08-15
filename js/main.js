@@ -32,3 +32,14 @@ function toggleMenu() { // Cambio de nombre de función para ser coherente
 
 
 
+// Agrega este event listener para todos los enlaces del menú móvil
+const enlacesMenuMovil = mobileMenu.querySelectorAll('a'); // Usa 'a' para seleccionar los enlaces
+enlacesMenuMovil.forEach(enlace => {
+  enlace.addEventListener('click', () => {
+    mobileMenu.classList.remove('active'); // Usa 'active' en lugar de 'activo'
+    content.style.display = 'block';
+  });
+});
+
+
+

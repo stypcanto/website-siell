@@ -659,7 +659,95 @@ input:checked+label:after {
 
 }
 
-.about .products {
+.products .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+/*-----------------------------------*\
+  #SERVICES
+\*-----------------------------------*/
+
+
+.services {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--azul_degradado);
+
+
+}
+
+.services .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+/*-----------------------------------*\
+  #PROYECTS
+\*-----------------------------------*/
+
+
+.proyects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--verdesurface);
+
+
+}
+
+.proyects .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+/*-----------------------------------*\
+  #BLOG
+\*-----------------------------------*/
+
+
+.blog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--suaveplomo);
+
+
+}
+
+.blog .container  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+/*-----------------------------------*\
+  #CONTACT
+\*-----------------------------------*/
+
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--azulclaro);
+
+
+}
+
+.contact .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
