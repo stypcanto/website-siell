@@ -43,3 +43,51 @@ enlacesMenuMovil.forEach(enlace => {
 
 
 
+function enviarformulario() {
+  const nombre = document.getElementById("nombre").value;
+  const apellidos = document.getElementById("apellidos").value;
+  const codigo_pais = document.getElementById("codigo_pais").value;
+  const telefono = document.getElementById("telefono").value;
+  const correo = document.getElementById("correo").value;
+  const mensaje = document.getElementById("mensaje").value;
+
+  // Realiza la validación para cada campo
+  if (nombre === "") {
+      alert("!Falta el campo Nombre!");
+  } else {
+      console.log("Nombre:", nombre);
+  }
+
+  if (apellidos === "") {
+      alert("!Falta el campo Apellidos!");
+  } else {
+      console.log("Apellidos:", apellidos);
+  }
+
+  if (codigo_pais === "") {
+      alert("!Falta seleccionar el Código de País!");
+  } else {
+      console.log("Código de País:", codigo_pais);
+  }
+
+  if (telefono === "") {
+      alert("!Falta el campo Teléfono!");
+  } else {
+      console.log("Teléfono:", telefono);
+  }
+
+  if (correo === "") {
+      alert("!Falta el campo Correo Electrónico!");
+  } else {
+      console.log("Correo Electrónico:", correo);
+  }
+
+  if (mensaje === "") {
+      alert("!Falta el campo Mensaje!");
+  } else {
+      console.log("Mensaje:", mensaje);
+  }
+
+  alert("Información enviada");
+}
+
