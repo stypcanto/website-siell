@@ -3,11 +3,13 @@
   --fuentePrincipal: 'Staatliches', cursive;
   --azul: rgb(10, 33, 51);
   --azulclaro: rgb(18, 60, 91);
+  --azulfooter: #002247;
   --blanco: white;
   --negro: black;
   --celeste: rgb(71, 176, 217);
   --negroopacidad: #0000003d;
   --suaveplomo: #C7C7C7;
+  --suaveblanco: rgb(211, 229, 236);
   --amarillo: rgb(255, 204, 0);
   --verde: #009688;
   --verdeclaro: #15deca;
@@ -106,17 +108,19 @@ html {
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: var(--azul);
+
   transition: background-color 0.4s, color 0.4s;
   font-size: 1.3rem;
   line-height: 1.5;
   width: 100%;
   height: 100%;
   position: relative;
+
 }
 
 .section {
   padding-block: var(--section-padding);
+
 }
 
 .inactive {
@@ -137,11 +141,13 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 80px;
   /* Puedes ajustar la altura según tu diseño */
   justify-content: space-between;
   text-decoration: none;
   padding: 0 24px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* Propiedad de sombra */
 
 
 }
@@ -258,16 +264,17 @@ nav {
 
 .mobile-menu {
   position: absolute;
-  top: 100px;
+  top: 80px;
   left: 0px;
   width: 100%;
   padding: 24px;
-
-  /* Radio de esquina derecho e inferior derecho */
-  background-color: var(--white);
-  box-shadow: 5px 5px 25px -10px var(--black);
   background-color: var(--azulclaro);
 
+  /* Radio de esquina derecho e inferior derecho 
+ 
+  box-shadow: 5px 5px 25px -10px var(--black);
+  background-color: var(--azulclaro);
+*/
 }
 
 .mobile-menu.active {
@@ -276,7 +283,7 @@ nav {
 
 .mobile-menu a {
   text-decoration: none;
-  color: var(--black);
+  color: var(--blanco);
   font-weight: bold;
   font-size: 2rem;
   /* Cambia el tamaño de fuente según tus preferencias */
@@ -303,7 +310,7 @@ nav {
 
 .sign-out {
   font-size: var(--sm);
-  color: var(--blanco) !important;
+  color: var(--azulclaro);
 }
 
 /* CHECKBOX */
@@ -321,7 +328,7 @@ nav {
   text-indent: -2000px;
   width: 40px;
   height: 20px;
-  background: var(--miFondoGradiente);
+  background: var(--azulclaro);
   border-radius: 200px;
   position: relative;
   display: inline-block;
@@ -341,11 +348,11 @@ nav {
 }
 
 /* Cambia los estilos de la etiqueta cuando el interruptor está activado (checked) */
-#switch:checked + label {
+#switch:checked+label {
   background: gray;
 }
 
-#switch:checked + label:after {
+#switch:checked+label:after {
   left: calc(100% - 5px);
   transform: translateX(-80%);
   background: var(--blanco);
@@ -403,6 +410,7 @@ nav {
   align-items: center;
   justify-content: center;
   height: 100vh;
+
   background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(../img/3.jpeg);
   background-position: center;
   background-repeat: no-repeat;
@@ -724,7 +732,7 @@ nav {
 
 }
 
-.blog .container  {
+.blog .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -736,174 +744,243 @@ nav {
 \*-----------------------------------*/
 
 /* Estilos adicionales para mejorar la apariencia del formulario de contacto */
-.container2 {
+
+@keyframes scrollUpAndDown {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-30px); /* Ajusta la distancia del desplazamiento hacia arriba */
+  }
+}
+
+#contact {
+  animation: scrollUpAndDown 2s; /* Ajusta la duración de la animación según tus preferencias */
+}
+
+.contact {
+  background-color: transparent;
+  min-height: calc(88vh - 100px);
+  /* Ajusta el valor 100px según el tamaño de tu footer */
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  
+  align-items: center; /* Esto centrará .box_form verticalmente */
 }
 
-
-
-/* Estilos generales del formulario de contacto */
-.formulario-contacto {
-  display: flex;
-  flex-direction: column;
-  width: 667px;
-  height: 738px;
-  padding: 20px;
-  background-color: #f5f5f5;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  right: 0px;
-  bottom: 30px;
-  clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
-}
-
-
-.datos_contacto {
-  position: absolute;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)) ,url("../img/4.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  bottom: 23px;
-  height: 710px;
-  width: 100vw;
-  clip-path: polygon(0% -500%, 100% 0%, 100% 85%, 50% 99%, 0% 85%);
-  overflow: hidden;
-  color: var(--blanco);
-  font-family: Arial, sans-serif;
-}
-
-.datos_contacto::before,
-.datos_contacto::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  width: 50%;
-  height: 2px;
-  background-image: linear-gradient(to right, transparent 0%, #fff 50%, transparent 100%);
-}
-
-.dato {
-  display: flex;
-  padding-left: 40px;
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-.dato_para_centrar {
-  margin-top: 30px;
-  width: 600px;
-  margin-left: 40px;
-}
-
-.h2_modificable {
-  margin-left: 20px;
-  margin-bottom: 10px;
-  font-size: 24px;
-}
-
-.dato p {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.mapouter {
+.box_form {
   position: relative;
-  text-align: right;
-  height: 300px;
-  width: 400px;
-  margin-top: 10px;
-}
+  width: 1000px;
+  height: 500px;
 
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  height: 300px;
-  width: 400px;
+  padding: 3rem;
+  margin-top: 100px;
+
 }
 
 
-.datos_contacto::before {
-  left: 0;
-  transform: translateY(1px);
+
+.figurita-siell2 {
+  display: flex;
+  position: absolute;
+  left: 0; /* Coloca la figura en el borde izquierdo */
+  top: 116px; /* Ajusta la distancia desde la parte superior según sea necesario */
+  width: 174px;
+  height: 317px;
+  margin-left: -50px;
 }
 
-.datos_contacto::after {
+.mensaje-form {
+  position: absolute;
   right: 0;
-  transform: translateY(-1px);
+  top: 0; /* Ajusta la posición en relación con .box_form */
+  text-align: center;
+  font-size: 14px;
+  color: var(--blanco);
+  margin-right: 110px;
+  margin-top: 435px; /* Ajusta la distancia desde la parte superior según sea necesario */
 }
 
 
+/*-----------------------------------*\
+  #FORMULARIO DE CONTACTO
+\*-----------------------------------*/
 
-
-.mapouter {
-  position: relative;
-  text-align: right;
-  height: 400px; /* Ajusta la altura según tus necesidades */
-  margin-top: 20px;
+form {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  height: 400px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  color: var(--azulfooter);
 }
 
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  height: 400px; /* Ajusta la altura igual que el contenedor */
+.form-row {
+  display: flex;
+  justify-content: space-between; /* Para separar los campos */
 }
 
-/* Estilos para los campos del formulario */
-.formulario-contacto .campo {
-  margin-bottom: 20px;
+.container form .form-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0;
 }
 
+/* Estilos para los campos */
+.campo {
+  text-align: left;
+  flex: 0.48; /* Distribuir el ancho en dos columnas */
+}
 
-.formulario-contacto .campo label {
+label {
   display: block;
+  margin-bottom: 5px;
   font-weight: bold;
+  margin-top: 7px;
 }
 
-.formulario-contacto .campo input,
-.formulario-contacto .campo textarea {
+select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
-/* Estilos para el botón de enviar */
-.formulario-contacto .boton-enviar button {
-  background-color: #004e92;
-  color: white;
-  padding: 10px 20px;
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Estilo para el botón */
+.boton {
+  text-align: center;
+}
+
+button {
+  background-color: #007BFF;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 18px;
   cursor: pointer;
 }
 
-.formulario-contacto .boton-enviar button:hover {
-  background-color: #003366;
+/* Estilo para el botón cuando se pasa el mouse por encima */
+button:hover {
+  background-color: #0056b3;
 }
 
-.mapouter {
-  position: relative;
-  text-align: right;
-  height: 300px;
-  width: 400px;
-}
-
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  height: 300px;
-  width: 400px;
+/* Estilos para los iconos */
+i {
+  margin-right: 10px;
 }
 
 
-.little_footer{
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+/* Estilos generales para el footer */
+/* Estilos para el footer */
+.footer {
+  background-color: var(--azulfooter);
+  color: #fff;
+  padding: 30px 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: center; /* Centra el contenido en el footer */
+}
+
+.footer ul {
+  list-style: none !important; /* Elimina las viñetas de la lista */
+  padding: 0 !important; /* Elimina el relleno predeterminado de la lista */
+}
+
+.footer ul li {
+  margin-bottom: 1px !important; /* Agrega un pequeño espacio entre los elementos de la lista */
+}
+
+.footer ul li a {
+  text-decoration: none; /* Elimina la subrayado de los enlaces */
+  color: var(--blanco); /* Establece el color de texto deseado para los enlaces */
+}
+
+
+/* Estilos para el contenedor principal del footer */
+.cajafooter {
+  max-width: 1200px; /* Ajusta el ancho máximo según tu diseño */
+  margin: 0 auto; /* Centra el footer horizontalmente */
+}
+
+/* Estilos para las filas y columnas del footer */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Espacio entre las columnas */
+}
+
+.footer-col {
+  width: calc(33.33% - 30px); /* Divide en 3 columnas iguales con espacio entre ellas */
+  padding: 0 15px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.footer-col h4 {
+  margin-bottom: 20px; /* Mayor espacio bajo el título */
+  font-size: 18px; /* Ajusta el tamaño del título según tu diseño */
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces de redes sociales */
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #fff;
+  font-size: 24px; /* Ajusta el tamaño de los iconos según tu diseño */
+  text-decoration: none;
+}
+
+/* Estilos para la columna de información de contacto */
+.footer-col:last-child {
+  text-align: right; /* Alinea la última columna a la derecha */
+}
+
+.footer-col2 ul {
+  list-style: none;
+  padding: 0;
   margin-top: 10px;
 }
+
+.footer-col2 ul li {
+  margin-bottom: 10px;
+  font-size: 16px; /* Ajusta el tamaño del texto según tu diseño */
+}
+
+/* Estilos para los iconos de ubicación, teléfono y correo */
+.footer-col2 ul li i {
+  margin-right: 10px; /* Mayor espacio entre el icono y el texto */
+  font-size: 18px; /* Ajusta el tamaño de los iconos según tu diseño */
+}
+
+
 
 
 /*-----------------------------------*\
@@ -933,16 +1010,9 @@ nav {
     margin-top: 43px;
     width: 50px !important;
     height: 74px !important;
-  
+
   }
 
-  .formulario-contacto {
-    margin-top: 100px !important;
-  }
-
-  .container2 h2{
-    margin-top: 100px !important;
-  }
 
 
 }
@@ -1004,67 +1074,63 @@ nav {
   }
 
 
-  .container2 {
-    padding: 10px;
-    margin-top: 190px;
-}
 
-.formulario-contacto {
-    left: 0 !important;
-    padding: 10px;
-    height: 620px !important;
-  
-}
 
-.datos_contacto {
-    padding: 10px;
-}
 
-.campo input,
-.campo textarea {
+
+  .datos_contacto {
+    padding: 10px;
+  }
+
+  .campo input,
+  .campo textarea {
     padding: 8px;
-}
+  }
 
-.boton-enviar button {
+  .boton-enviar button {
     padding: 8px 16px;
-}
+  }
 
-.mapouter{
-  display: none;
-} 
+  .mapouter {
+    display: none;
+  }
 
 }
 
 @media (max-width: 991px) {
 
+  /* 
   nav {
     background: #000428;
-    /* fallback para navegadores antiguos */
+    /* fallback para navegadores antiguos 
     background: -webkit-linear-gradient(to right, #004e92, #000428);
-    /* Chrome 10-25, Safari 5.1-6 */
+    /* Chrome 10-25, Safari 5.1-6 
     background: linear-gradient(to right, #004e92, #000428);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
 
   }
-
+  */
   nav::after {
     content: '';
-    /* Agrega un contenido vacío para el pseudo-elemento */
+    /*Agrega un contenido vacío para el pseudo-elemento */
     position: absolute;
-    /* Colocamos el pseudo-elemento de manera absoluta */
-    left: 0;
-    /* Lo posicionamos al inicio del nav */
-    bottom: -1px;
-    /* Mueve el pseudo-elemento hacia abajo (la altura de la línea + la sombra) */
-    width: 100%;
-    /* Ancho igual al del nav */
-    height: 1px;
-    /* Altura de la línea */
-    background-color: var(--suaveplomo);
-    /* Color de la línea blanca */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* Sombra debajo de la línea */
   }
+
+  /* Colocamos el pseudo-elemento de manera absoluta 
+    left: 0;
+    /* Lo posicionamos al inicio del nav 
+    bottom: -1px;
+    /* Mueve el pseudo-elemento hacia abajo (la altura de la línea + la sombra) 
+    width: 100%;
+    /* Ancho igual al del nav 
+    height: 1px;
+    /* Altura de la línea 
+    background-color: var(--suaveplomo);
+    /* Color de la línea blanca 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Sombra debajo de la línea 
+  } 
+  */
 
   .navbar-center {
     /* Establecemos un contenedor flexible */
@@ -1099,7 +1165,7 @@ nav {
     /* No necesitas esto aquí */
   }
 
- 
+
 
   /* Menú hamburguesa */
   .hamburger-menu {
@@ -1162,17 +1228,9 @@ nav {
     left: 10px;
   }
 
-  .formulario-contacto {
-    position: absolute;
-  
-    width: 400px;
-    height: 820px; 
-    left: 50%;
-    right: 0;
-    clip-path: polygon(0 0, 100% 0, 100% 91%, 0% 91%);
-  }
 
-  .dato_para_centrar{
+
+  .dato_para_centrar {
     position: relative;
     left: -41px;
   }
@@ -1182,14 +1240,14 @@ nav {
     text-align: right;
     height: 400px;
     width: 320px;
-}
+  }
 
-.gmap_canvas {
+  .gmap_canvas {
     overflow: hidden;
     background: none !important;
     height: 400px;
     width: 320px;
-}
+  }
 
 }
 
